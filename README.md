@@ -36,7 +36,16 @@ pkg/                # Reusable packages
 
 ## Requirements
 
-* Go 1.25
+- Go 1.25+
+
+## External Dependencies
+
+- [testify](https://github.com/stretchr/testify) - for unit tests
+- [gomock](https://github.com/golang/mock) – for testing with mocks
+- [gorilla/mux](https://github.com/gorilla/mux) – for routing HTTP requests
+- [google/uuid](https://github.com/google/uuid) - for generating request IDs
+- [godotenv](https://github.com/joho/godotenv) - for loading env vars
+- [yaml](https://gopkg.in/yaml.v3) - for parsing Yaml (to load config)
 
 ---
 
