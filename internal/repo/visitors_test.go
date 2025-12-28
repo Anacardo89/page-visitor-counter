@@ -49,7 +49,7 @@ func TestVisitorHandler_AddVisitor(t *testing.T) {
 
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			h := &visitorHandler{
+			h := &visitorRepoHandler{
 				data: make(map[string]map[string]struct{}),
 			}
 			for _, op := range tt.operations {
@@ -118,7 +118,7 @@ func TestVisitorHandler_CountVisitors(t *testing.T) {
 
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			h := &visitorHandler{
+			h := &visitorRepoHandler{
 				data: make(map[string]map[string]struct{}),
 			}
 			for _, op := range tt.initialAdds {
@@ -131,7 +131,7 @@ func TestVisitorHandler_CountVisitors(t *testing.T) {
 }
 
 func TestVisitorHandler_ConcurrentAddCount(t *testing.T) {
-	h := &visitorHandler{
+	h := &visitorRepoHandler{
 		data: make(map[string]map[string]struct{}),
 	}
 
