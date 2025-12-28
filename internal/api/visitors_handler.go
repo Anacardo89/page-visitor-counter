@@ -54,6 +54,10 @@ func (h *visitorAPIHandler) AddVisitor(w http.ResponseWriter, r *http.Request) {
 		}
 		return
 	}
+	if reqBody.Url == "" || reqBody.VisitorID == "" {
+		slog.Error("empty required fields", "request_id", reqID)
+		failHTTP(w, reqID, http.StatusBadRequest, "all fields must have non-empty values")
+	}
 	// Repo operation
 	h.repo.AddVisitor(reqBody.Url, reqBody.VisitorID)
 	// Response
