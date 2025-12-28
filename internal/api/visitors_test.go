@@ -7,7 +7,7 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/Anacardo89/page-visitor-counter/internal/repo"
+	"github.com/Anacardo89/page-visitor-counter/internal/repo/mock"
 	"github.com/golang/mock/gomock"
 	"github.com/stretchr/testify/assert"
 )
@@ -16,7 +16,7 @@ func TestVisitorAPI_AddVisitor(t *testing.T) {
 	// Setup
 	ctrl := gomock.NewController(t)
 	defer ctrl.Finish()
-	mockRepo := repo.NewMockVisitorRepo(ctrl)
+	mockRepo := mock.NewMockVisitorRepo(ctrl)
 	handler := NewVisitorAPI(mockRepo)
 
 	tests := []struct {
@@ -81,7 +81,7 @@ func TestVisitorAPI_CountVisitors(t *testing.T) {
 	// Setup
 	ctrl := gomock.NewController(t)
 	defer ctrl.Finish()
-	mockRepo := repo.NewMockVisitorRepo(ctrl)
+	mockRepo := mock.NewMockVisitorRepo(ctrl)
 	handler := NewVisitorAPI(mockRepo)
 
 	tests := []struct {
