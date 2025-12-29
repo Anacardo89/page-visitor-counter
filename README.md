@@ -27,9 +27,8 @@ internal/           # Core application logic
   server/             # HTTP server and router
 pkg/                # Reusable packages
   validator/          # JSON validator
-                       # - Repurposed from your own codebase
-                       # - Used instead of the standard Go playground validator
-                       # - Checks presence of required fields only, ignoring their actual values
+                       # - Repurposed from my own codebase
+                       # - Checks presence of required fields only, ignoring their values (accepts zero fields)
 ```
 
 ---
